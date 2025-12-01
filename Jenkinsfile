@@ -11,6 +11,11 @@ pipeline {
                 powershell 'php index.php'
             }
         }
+        stage('Unit Test') {
+            steps {
+                powershell 'vendor\\bin\\phpunit tests'
+            }
+        }
     }
     post {
         success {
